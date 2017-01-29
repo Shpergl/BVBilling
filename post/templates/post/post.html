@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}
+    {{ post.title }}
+{% endblock %}
+
+{% block content %}
+    <h1>{{ post.title }}</h1>
+    <p>{{ post.text }}</p>
+    <a href="{% url 'add-like' post.id %}"><img src="{% static 'post/img/like.png' %}" width="30px" height="30px"></a>{{ post.likes }}
+    {% for comment in comments %}
+    <p>COMMENTS:{{ comment.text }}</p>
+    {% endfor %}
+    <form action="{% url 'add-comment' post.id %}" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" class="button" value="Save comment">
+    </form>
+
+{% endblock %}

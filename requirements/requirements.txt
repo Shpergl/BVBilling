@@ -1,0 +1,11 @@
+Python 2.7.6
+pip 1.5.4
+
+Django==1.10.4
+Markdown==2.6.7
+PyJWT==1.4.2
+django-filter==1.0.1
+djangorestframework==3.5.3
+djangorestframework-jwt==1.9.0
+django-rest-swagger==2.1.0
+
